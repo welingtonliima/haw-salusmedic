@@ -2,6 +2,14 @@ $(document).ready(
 	function () {
 	$(":input").inputmask();
 	
+	  $('#modal-paciente').modal('show');
+
+	  $( "input" ).on( "blur", function() {
+			$( this ).val(function( i, val ) {
+			return val.toUpperCase();
+		});
+	});
+	
 	var element = document.getElementById("statusNotificacao").value;
 	var txt = document.getElementById("menssagemNotificacao").value;
 		switch (element){
@@ -152,7 +160,7 @@ function toggleFullScreen() {
 };
 
 function confirmacaoDeExclusao(codigo, modulo){
-	if (confirm('Excluir especialidade?')) {  
+	if (confirm('Excluir '+ modulo + ' ?')) {  
         location.href = modulo+'/remove/' + codigo;
     }
 }

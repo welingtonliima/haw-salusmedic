@@ -2,23 +2,22 @@ package br.com.haw.salusmedic.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Prestador extends Pessoa {
 
 	private String numeroConselho;
-	@OneToOne (cascade = CascadeType.ALL)
+	@ManyToOne
 	private TipoConselho tipoConselho;
 	@ManyToOne
 	private TipoPrestador tipoPrestador;
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Especialidade> especialidades;
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Hospital> hospitais;
 	
 	

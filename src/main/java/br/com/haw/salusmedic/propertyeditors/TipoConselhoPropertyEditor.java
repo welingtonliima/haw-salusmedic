@@ -9,9 +9,9 @@ import br.com.haw.salusmedic.dao.TipoConselhoDao;
 import br.com.haw.salusmedic.model.TipoConselho;
 
 @Component
-public class TipoConselhoPropertyEditor extends PropertyEditorSupport {
+public class TipoConselhoPropertyEditor extends PropertyEditorSupport{
 	
-	@Autowired 
+	@Autowired
 	private TipoConselhoDao tipoConselhoDao;
 	
 	@Override

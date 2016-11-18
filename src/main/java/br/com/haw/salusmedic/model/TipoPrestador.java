@@ -11,7 +11,7 @@ public class TipoPrestador {
 	
 	@Id @Column(name="idTipoPrestador") @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String descricao;;
+	private String descricao;
 	
 	public Long getId() {
 		return id;

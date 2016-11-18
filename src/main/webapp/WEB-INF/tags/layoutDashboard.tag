@@ -1,4 +1,4 @@
-<%@ tag language="java"  pageEncoding="UTF-8"%>
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
@@ -10,7 +10,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <c:url value="/resources" var="resourcesPath" />
 <c:url value="/resources/gentelella-master" var="stylePath" />
@@ -59,14 +62,15 @@
 						</div>
 						<div class="profile_info">
 							<span>Bem Vindo,</span>
-							<h2></h2>
+							<h2><%-- <security:authentication property="principal.username"></security:authentication> --%></h2>
+							<br/><br/>
 						</div>
 					</div>
-					<br />
-					<%@include file="menuAdministrador.jsp"%>
+					
+					<%@include file="menuDashboard.jsp"%>
 				</div>
 			</div>
-			<%@include file="topo.jsp"%>
+			<%@include file="topoDashboard.jsp"%>
 			<div class="right_col" role="main">
 				<div class="">
 					<div class="page-title">

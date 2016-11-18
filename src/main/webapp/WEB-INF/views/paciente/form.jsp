@@ -3,10 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<t:layout module="Paciente">
+<t:layoutDashboard module="Paciente">
 	<div class="row">
 		<t:painel title="Cadastro de Paciente">
-		<form:form action="${s:mvcUrl('adiconarPaciente').build()}" method="post" commandName="paciente" class="form-horizontal form-label-left">
+		<form:form action="${s:mvcUrl('adicionarPaciente').build()}" method="post" commandName="paciente" class="form-horizontal form-label-left">
 				<div class="row">
 					<div class="form-group col-md-2">
 						<label for="">Código</label>
@@ -189,4 +189,4 @@
 			</form:form>
 		</t:painel>
 	</div>
-</t:layout>
+</t:layoutDashboard>

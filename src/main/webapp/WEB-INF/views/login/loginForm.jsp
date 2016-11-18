@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 23/09/2016, 22:54:47
-    Author     : Welington Lima
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib tagdir="/WEB-INF/tags" prefix="t"%>
@@ -18,6 +13,7 @@
 <c:url value="/resources/gentelella-master" var="contextPath" />
 <c:url value="/resources/" var="resourcesPath" />
 
+<link rel="shortcut icon" href="${resourcesPath }/imagens/Icone.ico">
 <title>SalusMedic | Login</title>
 
 <link href="${contextPath}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

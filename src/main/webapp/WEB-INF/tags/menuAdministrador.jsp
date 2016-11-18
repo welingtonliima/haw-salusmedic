@@ -18,7 +18,7 @@
 		class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
 	</a> <a data-toggle="tooltip" data-placement="top" title="Bloquear"> <span
 		class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-	</a> <a data-toggle="tooltip" data-placement="top" title="Sair"> <span
+	</a> <a href="/salusmedic/logout" data-toggle="tooltip" data-placement="top" title="Sair"> <span
 		class="glyphicon glyphicon-off" aria-hidden="true"></span>
 	</a>
 </div>

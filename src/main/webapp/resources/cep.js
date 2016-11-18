@@ -7,10 +7,10 @@ function limpa_formulário_cep() {
 
 function meu_callback(conteudo) {
 	if (!("erro" in conteudo)) {
-		document.getElementById('logradouro').value = (conteudo.logradouro);
-		document.getElementById('bairro').value = (conteudo.bairro);
-		document.getElementById('cidade').value = (conteudo.localidade);
-		document.getElementById('uf').value = (conteudo.uf);
+		document.getElementById('logradouro').value = (conteudo.logradouro).toUpperCase();
+		document.getElementById('bairro').value = (conteudo.bairro).toUpperCase();
+		document.getElementById('cidade').value = (conteudo.localidade).toUpperCase();
+		document.getElementById('uf').value = (conteudo.uf).toUpperCase();
 	} // end if.
 	else {
 		limpa_formulário_cep();
@@ -37,9 +37,7 @@ function pesquisacep(valor) {
 
 			script.src = '//viacep.com.br/ws/' + cep
 					+ '/json/?callback=meu_callback';
-
 			document.body.appendChild(script);
-
 		} else {
 			limpa_formulário_cep();
 			alert("Formato de CEP inválido.");

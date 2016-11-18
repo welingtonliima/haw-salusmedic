@@ -1,5 +1,6 @@
 package br.com.haw.salusmedic.controllers;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class PacienteController {
     public ModelAndView form(Paciente paciente) {
         return new ModelAndView("paciente/form");
     }
-
+    
     @RequestMapping (value = "/detalhe/{id}", name="editarPaciente")
     public ModelAndView detalhe(@PathVariable("id") Long id){
     	ModelAndView modelAndView = new ModelAndView("paciente/form");
@@ -33,17 +34,26 @@ public class PacienteController {
     	return modelAndView;
     }
     
-    @RequestMapping(method = RequestMethod.POST, name = "adiconarPaciente")
-    public ModelAndView grava(Paciente paciente, RedirectAttributes redirectAttributes) {
+    @RequestMapping(method = RequestMethod.POST, name = "adicionarPaciente")
+    public ModelAndView grava(Paciente paciente, RedirectAttributes redirectAttributes) throws UnsupportedEncodingException {
     	pacienteDao.save(paciente);
         redirectAttributes.addFlashAttribute("status", "success");
         redirectAttributes.addFlashAttribute("menssagem", "Paciente cadastrado com sucesso!");
         return new ModelAndView("redirect:/paciente");
     }
     
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, name="listarPaciente")
     public ModelAndView listar() {
-        List<Paciente> pacientes = pacienteDao.findAll();
+        List<Paciente> pacientes = pacienteDao.findAllByOrderByNomeAsc();
+        ModelAndView modelAndView = new ModelAndView("paciente/lista");
+        modelAndView.addObject("pacientes", pacientes);
+        return modelAndView;
+    }
+    
+    @RequestMapping(value = "formBuscaPaciente", name="buscarPaciente")
+    public ModelAndView listarPaciente(Paciente paciente, RedirectAttributes redirectAttributes) {
+        List<Paciente> pacientes;
+        pacientes =  pacienteDao.findByCarteiraNacionalDaSaudeOrCpfOrNomeLike(paciente.getCarteiraNacionalDaSaude(), paciente.getCpf(), paciente.getNome());
         ModelAndView modelAndView = new ModelAndView("paciente/lista");
         modelAndView.addObject("pacientes", pacientes);
         return modelAndView;

@@ -19,9 +19,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import br.com.haw.salusmedic.controllers.HomeController;
 import br.com.haw.salusmedic.dao.EspecialidadeDao;
 import br.com.haw.salusmedic.propertyeditors.EspecialidadePropertyEditor;
+import br.com.haw.salusmedic.service.UsuarioService;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, EspecialidadeDao.class, EspecialidadePropertyEditor.class})
+@ComponentScan(basePackageClasses={HomeController.class, EspecialidadeDao.class, EspecialidadePropertyEditor.class, UsuarioService.class})
 public class AppWebConfiguration extends WebMvcConfigurerAdapter  {
 	
 	@Bean
@@ -29,6 +30,8 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter  {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix(".jsp");
+		
+		resolver.setExposedContextBeanNames("prestadorService");
 		return resolver;
 	}
 	
@@ -53,7 +56,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter  {
 	@Bean
 	public MultipartResolver multipartResolver() {
 	    return new StandardServletMultipartResolver();
-	}
+	}	
 	
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

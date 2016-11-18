@@ -34,6 +34,16 @@ public abstract class Pessoa {
 	private Endereco endereco;
 	@OneToOne (cascade = CascadeType.ALL)
 	private Contato contato;
+	@OneToOne (cascade = CascadeType.ALL)
+	private Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public Long getId() {
 		return id;
