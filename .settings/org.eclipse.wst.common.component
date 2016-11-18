@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/br.com.haw.salusmedic/target/classes"/>
-        <property name="context-root" value="salusmedic"/>
+        <property name="context-root" value="br.com.haw.salusmedic"/>
     </wb-module>
 </project-modules>
