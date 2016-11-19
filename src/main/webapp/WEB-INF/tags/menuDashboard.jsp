@@ -38,9 +38,9 @@
 			<li>
 				<a><i class="fa fa-desktop"></i> &nbsp; Lista de Pacientes<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                     <li><a href="chartjs.html">Ambulatório</a></li>
-                     <li><a href="chartjs2.html">Internação</a></li>
-                     <li><a href="morisjs.html">Urgência</a></li>
+                     <li><a href="${s:mvcUrl('listarTipoAtendimento').arg(0,'AMBULATORIAL').build()}">Ambulatório</a></li>
+                     <li><a href="${s:mvcUrl('listarTipoAtendimento').arg(0,'INTERNACAO').build()}">Internação</a></li>
+                     <li><a href="${s:mvcUrl('listarTipoAtendimento').arg(0,'EMERGENCIA').build()}">Urgência</a></li>
                 </ul>
             </li>
 			<li><a href="historicoPaciente"><b><i class="fa fa-archive"></i>&nbsp; Histórico de Pacientes</b></a></li>

@@ -91,4 +91,13 @@ public class AtendimentoController {
         redirectAttributes.addFlashAttribute("menssagem", "Especialiade excluida com sucesso!");
         return new ModelAndView("redirect:/atendimento");
     } 
+    
+    @RequestMapping(value = "/{tipoAtendimento}", name="listarTipoAtendimento")
+    public ModelAndView listarTipoAtendimento(@PathVariable("tipoAtendimento") String tipoAtendimento) {
+        ModelAndView modelAndView = new ModelAndView("listaPacientes/listarTipoAtendimento");
+        List<Atendimento> atendimentos = atendimentoDao.findByTipoAtendimento(atendimentoService.getTipoAtendimentoDao().findByDescricao(tipoAtendimento));
+        modelAndView.addObject("atendimentos", atendimentos);
+        modelAndView.addObject("tipoAtendimento", tipoAtendimento);
+        return modelAndView;
+    }
 }

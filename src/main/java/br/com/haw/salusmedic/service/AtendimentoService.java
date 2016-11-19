@@ -59,4 +59,13 @@ public class AtendimentoService {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd'/'MM'/'yyyy' 'HH':'mm",locale); 
 		return sdf.format(calendar.getTime());
 	}
+
+	public TipoAtendimentoDao getTipoAtendimentoDao() {
+		return tipoAtendimentoDao;
+	}
+
+	public void setTipoAtendimentoDao(TipoAtendimentoDao tipoAtendimentoDao) {
+		this.tipoAtendimentoDao = tipoAtendimentoDao;
+	}
+	
 }

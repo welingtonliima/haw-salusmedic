@@ -7,5 +7,6 @@ import br.com.haw.salusmedic.model.TipoAtendimento;
 
 @Repository
 public interface TipoAtendimentoDao extends JpaRepository<TipoAtendimento, Long> {
-
+	
+	TipoAtendimento findByDescricao (String descricao);
 }

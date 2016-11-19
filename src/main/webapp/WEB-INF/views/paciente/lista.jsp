@@ -36,7 +36,7 @@
 							</td>
 						</tr>
 					</c:forEach>
-				<tbody>
+				</tbody>
 			</table>
 		</t:painel>
 	</div>
