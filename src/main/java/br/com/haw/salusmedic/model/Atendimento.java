@@ -7,37 +7,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-import br.com.haw.salusmedic.enume.LocalProcedencia;
-import br.com.haw.salusmedic.enume.TipoAtendimento;
 
 @Entity
 public class Atendimento {
 
 	@Id @Column(name = "idAtendimento") @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-/*	@ManyToOne
-	private Paciente paciente;
-	@ManyToMany
-	private Prestador prestador;
-	@ManyToOne
-	private TipoAtendimento tipoAtendimento;
-	@ManyToOne
-	private LocalProcedencia localProcedencia;
-	@DateTimeFormat 
-	private Calendar dataEntrada;
-	@DateTimeFormat
-	private Calendar dataSaida;
-	@ManyToOne
-	private Especialidade especialidade;
-	@ManyToOne
-	private Diagnostico diagnostico;
-	private String status;
+	@ManyToOne private Paciente paciente;
+	@ManyToOne private Prestador prestador;
+	@ManyToOne private Hospital hospital;
+	@ManyToOne private TipoAtendimento tipoAtendimento;
+	@ManyToOne private Especialidade especialidade;
+	@DateTimeFormat @Temporal(value=TemporalType.TIMESTAMP) private Calendar dataAndHoraEntrada;
+	@DateTimeFormat @Temporal(value=TemporalType.TIMESTAMP) private Calendar dataAndHoraSaida;
+	@ManyToOne private Diagnostico diagnostico;
 	
+	private String localProcedencia;
+	private String destino;
+	private String status;
+	private String observacao;
 	public Long getId() {
 		return id;
 	}
@@ -56,6 +49,12 @@ public class Atendimento {
 	public void setPrestador(Prestador prestador) {
 		this.prestador = prestador;
 	}
+	public Hospital getHospital() {
+		return hospital;
+	}
+	public void setHospital(Hospital hospital) {
+		this.hospital = hospital;
+	}
 	public TipoAtendimento getTipoAtendimento() {
 		return tipoAtendimento;
 	}
@@ -68,10 +67,46 @@ public class Atendimento {
 	public void setEspecialidade(Especialidade especialidade) {
 		this.especialidade = especialidade;
 	}
+	public Calendar getDataAndHoraEntrada() {
+		return dataAndHoraEntrada;
+	}
+	public void setDataAndHoraEntrada(Calendar dataAndHoraEntrada) {
+		this.dataAndHoraEntrada = dataAndHoraEntrada;
+	}
+	public Calendar getDataAndHoraSaida() {
+		return dataAndHoraSaida;
+	}
+	public void setDataAndHoraSaida(Calendar dataAndHoraSaida) {
+		this.dataAndHoraSaida = dataAndHoraSaida;
+	}
 	public Diagnostico getDiagnostico() {
 		return diagnostico;
 	}
 	public void setDiagnostico(Diagnostico diagnostico) {
 		this.diagnostico = diagnostico;
-	}*/
+	}
+	public String getLocalProcedencia() {
+		return localProcedencia;
+	}
+	public void setLocalProcedencia(String localProcedencia) {
+		this.localProcedencia = localProcedencia;
+	}
+	public String getDestino() {
+		return destino;
+	}
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getObservacao() {
+		return observacao;
+	}
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	} 
 }

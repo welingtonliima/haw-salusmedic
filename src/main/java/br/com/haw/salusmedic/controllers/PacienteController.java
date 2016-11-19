@@ -39,7 +39,7 @@ public class PacienteController {
     	pacienteDao.save(paciente);
         redirectAttributes.addFlashAttribute("status", "success");
         redirectAttributes.addFlashAttribute("menssagem", "Paciente cadastrado com sucesso!");
-        return new ModelAndView("redirect:/paciente");
+        return listarPaciente(paciente, redirectAttributes);
     }
     
     @RequestMapping(method = RequestMethod.GET, name="listarPaciente")
