@@ -53,6 +53,9 @@
                         		<c:forEach items="${prestador.especialidades}" var="especilidades">
                         			<form:option value="${especilidades.id}" selected="selected"> ${especilidades.descricao}</form:option>
                         		</c:forEach>
+                        		<c:forEach items="${especialidades}" var="allEspecilidades">
+                        			<form:option value="${allEspecilidades.id}"> ${allEspecilidades.descricao}</form:option>
+                        		</c:forEach>
                          	</c:if>       	
                         </form:select>
 					</div>

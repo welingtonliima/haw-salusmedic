@@ -29,7 +29,7 @@
 							<td>${paciente.naturalidade}</td>
 							<td>${paciente.cpf}</td>
 							<td>
-								<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Confirmar</a> 
+								<a href="${s:mvcUrl('formAtendimentoPaciente').arg(0,paciente.id).build()}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i>Confirmar</a> 
 								<a href="${s:mvcUrl('editarPaciente').arg(0,paciente.id).build()}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Editar </a>
 								<a href="${s:mvcUrl('editarPaciente').arg(0,paciente.id).build()}" class="btn btn-danger btn-xs"
 								 onclick="return confirm ('Deseja realmente desativar o paciente? ');"><i class="fa fa-trash"></i>Desativar</a>
