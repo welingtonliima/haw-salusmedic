@@ -17,6 +17,16 @@ public class Triagem {
     private Alergias alergias;
     @Embedded
     private SinaisVitais sinaisVitais;
+    @Embedded
+    private AvaliacaoInicial avaliacaoInicial;
+
+	public AvaliacaoInicial getAvaliacaoInicial() {
+		return avaliacaoInicial;
+	}
+
+	public void setAvaliacaoInicial(AvaliacaoInicial avaliacaoInicial) {
+		this.avaliacaoInicial = avaliacaoInicial;
+	}
 
 	public SinaisVitais getSinaisVitais() {
 		return sinaisVitais;
