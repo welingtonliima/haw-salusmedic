@@ -134,7 +134,6 @@
     <script src="${stylePath}/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="${stylePath}/vendors/pdfmake/build/vfs_fonts.js"></script>
     
-    
     <script src="${stylePath}/build/js/custom.min.js"></script>
     
     <script>

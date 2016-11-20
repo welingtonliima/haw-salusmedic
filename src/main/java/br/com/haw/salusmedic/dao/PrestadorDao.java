@@ -13,7 +13,7 @@ import br.com.haw.salusmedic.model.Usuario;
 @Repository
 public interface PrestadorDao extends JpaRepository<Prestador, Long>{
 
-	Prestador findOneByUsuario(Usuario user);
+	Prestador findOneByUsuario(Usuario usuario);
 	
 	List<Prestador> findByTipoPrestadorAndHospitais(TipoPrestador tipoPrestador, Hospital hospital);
 }

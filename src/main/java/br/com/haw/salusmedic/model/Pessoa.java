@@ -13,6 +13,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,10 +23,12 @@ public abstract class Pessoa {
 
 	@Id @GeneratedValue(strategy=GenerationType.TABLE)
 	private Long id;
+	@NotNull
 	private String nome;
 	@DateTimeFormat @Temporal(TemporalType.DATE)
 	private Calendar dataNascimento;
 	private String sexo;
+	@NotNull
 	private String cpf;
 	private String nacionalidade;
 	@Embedded

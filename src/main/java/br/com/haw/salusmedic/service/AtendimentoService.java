@@ -67,5 +67,4 @@ public class AtendimentoService {
 	public void setTipoAtendimentoDao(TipoAtendimentoDao tipoAtendimentoDao) {
 		this.tipoAtendimentoDao = tipoAtendimentoDao;
 	}
-	
 }

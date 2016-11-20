@@ -48,11 +48,11 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter  {
 	public FormattingConversionService mvcConversionService(){
 		DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
 		DateFormatterRegistrar formatterRegistrar = new DateFormatterRegistrar();
-		formatterRegistrar.setFormatter(new DateFormatter("dd/MM/yyyy HH:mm"));
+		formatterRegistrar.setFormatter(new DateFormatter("dd/MM/yyyy"));
 		formatterRegistrar.registerFormatters(conversionService);
 		return conversionService;
 	}
-	
+		
 	@Bean
 	public MultipartResolver multipartResolver() {
 	    return new StandardServletMultipartResolver();

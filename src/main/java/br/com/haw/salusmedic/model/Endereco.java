@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Endereco {
@@ -17,6 +18,7 @@ public class Endereco {
 	private String bairro;
 	private String cidade;
 	private String uf;
+	@NotNull
 	private String cep;
 	
 	public Long getId() {

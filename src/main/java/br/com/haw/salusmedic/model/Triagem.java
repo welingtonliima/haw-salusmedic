@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Triagem {
@@ -13,8 +14,8 @@ public class Triagem {
 	private long id;
     @Embedded
 	private AbordagemInicial abordagemInicial;
-    @Embedded
-    private Alergias alergias;
+    @OneToOne
+    private TipoAlergia alergias;
     @Embedded
     private SinaisVitais sinaisVitais;
     @Embedded
@@ -52,11 +53,11 @@ public class Triagem {
 		this.abordagemInicial = abordagemInicial;
 	}
 
-	public Alergias getAlergias() {
+	public TipoAlergia getAlergias() {
 		return alergias;
 	}
 
-	public void setAlergias(Alergias alergias) {
+	public void setAlergias(TipoAlergia alergias) {
 		this.alergias = alergias;
 	}
 	

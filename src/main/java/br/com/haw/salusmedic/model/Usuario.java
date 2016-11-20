@@ -1,6 +1,7 @@
 package br.com.haw.salusmedic.model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 
@@ -11,22 +12,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class Usuario implements UserDetails{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@Id @Column(name="idUsuario") @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(unique=true)
 	private String login;
 	private String senha;
+	@DateTimeFormat @Temporal(TemporalType.DATE)
+	private Calendar dataCadastro;
+	private boolean alterouAsenha;
 	
 	
     @ManyToMany(fetch=FetchType.EAGER)
@@ -54,6 +59,21 @@ public class Usuario implements UserDetails{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public Calendar getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Calendar dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public boolean isAlterouAsenha() {
+		return alterouAsenha;
+	}
+
+	public void setAlterouAsenha(boolean alterouAsenha) {
+		this.alterouAsenha = alterouAsenha;
 	}
 
 	public List<Perfil> getPerfis() {

@@ -8,7 +8,6 @@ public class AbordagemInicial {
 	private String queixaInicial;
 	private String observacao;
 	
-	
 	public String getQueixaInicial() {
 		return queixaInicial;
 	}
@@ -21,6 +20,4 @@ public class AbordagemInicial {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
-	
-
 }

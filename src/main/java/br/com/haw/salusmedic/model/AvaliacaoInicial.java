@@ -8,7 +8,6 @@ public class AvaliacaoInicial {
 	private String avaliacaoDeRisco;
 	private String escalaDeDor;
 	
-	
 	public String getAvaliacaoDeRisco() {
 		return avaliacaoDeRisco;
 	}
@@ -21,5 +20,4 @@ public class AvaliacaoInicial {
 	public void setEscalaDeDor(String escalaDeDor) {
 		this.escalaDeDor = escalaDeDor;
 	}
-
 }

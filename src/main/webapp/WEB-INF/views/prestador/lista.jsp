@@ -25,7 +25,8 @@
 						<td>${prestador.tipoPrestador.descricao}</td>
 						<td>
 							<a href="${s:mvcUrl('editarPrestador').arg(0,prestador.id).build()}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Editar </a>
-							<a href="javascript: confirmacaoDeExclusao(${prestador.id},'prestador');" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>Excluir</a>
+							<a href="${s:mvcUrl('removerPrestador').arg(0,paciente.id).build()}" class="btn btn-danger btn-xs"
+								 onclick="return confirm ('Deseja realmente excluir o prestador? ');"><i class="fa fa-trash"></i>Excluir</a>							
 						</td>
 					</tr>
 				</c:forEach>

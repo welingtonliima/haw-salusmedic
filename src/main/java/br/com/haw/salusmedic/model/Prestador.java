@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Prestador extends Pessoa {
@@ -15,9 +16,9 @@ public class Prestador extends Pessoa {
 	private TipoConselho tipoConselho;
 	@ManyToOne
 	private TipoPrestador tipoPrestador;
-	@ManyToMany(fetch=FetchType.EAGER)
-	private List<Especialidade> especialidades;
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER) 
+	List<Especialidade> especialidades;
+	@ManyToMany(fetch=FetchType.EAGER) 
 	private List<Hospital> hospitais;
 	
 	

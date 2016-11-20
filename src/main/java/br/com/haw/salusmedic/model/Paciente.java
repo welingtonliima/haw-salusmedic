@@ -17,6 +17,7 @@ public class Paciente extends Pessoa{
 	private CertidaoNascimento certidaoNascimento;
 	@OneToOne(mappedBy="paciente")
     private Prontuario prontuario;
+	private boolean status;
 	
 	public String getNomeDaMae() {
 		return nomeDaMae;
@@ -65,5 +66,11 @@ public class Paciente extends Pessoa{
 	}
 	public void setRaca(String raca) {
 		this.raca = raca;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 }
