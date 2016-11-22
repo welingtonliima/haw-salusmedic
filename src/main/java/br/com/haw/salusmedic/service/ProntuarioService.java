@@ -11,6 +11,7 @@ import br.com.haw.salusmedic.model.Prontuario;
 public class ProntuarioService {
 
 	@Autowired private ProntuarioDao prontuariorDao;
+	@Autowired private AtendimentoService atendimentoService;
 
 	public Prontuario criarProntuario(){
 		HistoriaClinica historiaClinica = new HistoriaClinica();
@@ -42,5 +43,15 @@ public class ProntuarioService {
 
 	public void setProntuariorDao(ProntuarioDao prontuariorDao) {
 		this.prontuariorDao = prontuariorDao;
+	}
+
+
+	public AtendimentoService getAtendimentoService() {
+		return atendimentoService;
+	}
+
+
+	public void setAtendimentoService(AtendimentoService atendimentoService) {
+		this.atendimentoService = atendimentoService;
 	}
 }

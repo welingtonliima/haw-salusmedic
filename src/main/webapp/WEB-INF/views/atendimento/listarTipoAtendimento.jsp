@@ -2,8 +2,14 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+
+
 
 <t:layoutDashboard module="Atendimento">
+ 	<security:authentication property="principal" var="usuario"/>
+ 	Usuário: ${usuario.username}
 	<c:if test="${tipoAtendimento eq 'INTERNACAO' }">
 		<t:painel title="Internação">
 			<input type="hidden" id="statusNotificacao" value="${status}">
@@ -59,7 +65,7 @@
 				<thead>
 					<tr>
 						<th style="5%">Prioridade</th>
-						<th style="5%">Atendimento</th>
+						<th style="2%">Atendimento</th>
 						<th>Nome Paciente</th>
 						<th style="5%">Idade</th>
 						<th>Sexo</th>
@@ -76,10 +82,10 @@
 					<tr>
 						<td style="5%">${atendimento.prioridade}</td>
 						<td>${atendimento.id}</td>
-						<td>${atendimento.paciente.nome}</td>
+						<td><a href="${s:mvcUrl('prontuarioEletronico').arg(0,atendimento.id)}">${atendimento.paciente.nome}</a></td>
 						<td>${atendimento.paciente.idade} ANOS</td>
 						<td>${atendimento.paciente.sexo}</td>
-						<th>${atendimento.status}</th>
+						<td>${atendimento.status}</td>
 						<td><fmt:formatDate type="both" dateStyle="short" timeStyle="short" value="${atendimento.dataAndHoraEntrada.time}" /></td>
 						<td>${atendimento.especialidade.descricao}</td>
 						<td>${atendimento.prestador.nome}</td>

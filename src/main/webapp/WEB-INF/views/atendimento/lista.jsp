@@ -6,7 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <t:layoutDashboard module="Atendimento" adicionar="mostrar" link="${s:mvcUrl('formEspecialidade').build()}">
 	<div class="row">
-		<t:painel title="Atendimentos Abertos">
+		<t:painel title="Lista Atendimentos">
 			<input type="hidden" id="statusNotificacao" value="${status}">
 			<input type="hidden" id="menssagemNotificacao" value="${menssagem}">
 			<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -32,7 +32,7 @@
 							<td>${atendimento.status}</td>
 							<td>
 								<a href="${s:mvcUrl('editarAtendimento').arg(0,atendimento.id).build()}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Editar </a>
-								<a href="${s:mvcUrl('removerAtendimento').arg(0,atendimentoatendimento.id).build()}" class="btn btn-danger btn-xs"
+								<a href="${s:mvcUrl('removerAtendimento').arg(0,atendimento.id).build()}" class="btn btn-danger btn-xs"
 								 onclick="return confirm ('Deseja realmente excluir o atendimento? ');"><i class="fa fa-trash"></i>Desativar</a>
 							</td>
 						</tr>

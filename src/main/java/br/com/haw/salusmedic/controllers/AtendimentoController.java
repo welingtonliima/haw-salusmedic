@@ -1,5 +1,7 @@
 package br.com.haw.salusmedic.controllers;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +58,7 @@ public class AtendimentoController {
     	modelAndView.addObject("tipoAtendimentos", atendimentoService.getTipoAtendimentos());
     	modelAndView.addObject("especialidades", atendimentoService.getEspecialidades());
     	modelAndView.addObject("dataAndHoraAtual", atendimentoService.getDataHoraAtual());
+    	modelAndView.addObject("status", "CADASTRANDO");
     	return modelAndView;
     }
 
@@ -69,9 +72,14 @@ public class AtendimentoController {
     
     @RequestMapping(method = RequestMethod.POST, name = "adicionarAtendimento")
     public ModelAndView grava(Atendimento atendimento, RedirectAttributes redirectAttributes) {
-        atendimentoDao.save(atendimento);
+    	if (atendimento.getId() == null || atendimento.getId() == 0) {
+    		atendimento.setStatus("AGUARDA TRIAGEM");
+    		GregorianCalendar dataAndHoraEntrada = new GregorianCalendar();
+			atendimento.setDataAndHoraEntrada(dataAndHoraEntrada);
+		}
+    	atendimentoDao.save(atendimento);
         redirectAttributes.addFlashAttribute("status", "success");
-        redirectAttributes.addFlashAttribute("menssagem", "Especialiade cadastrada com sucesso!");
+        redirectAttributes.addFlashAttribute("menssagem", "Atendimento cadastrado com sucesso!");
         return new ModelAndView("redirect:/atendimento");
     }
     
@@ -88,7 +96,7 @@ public class AtendimentoController {
     	Atendimento atendimento = atendimentoDao.findOne(id);
     	atendimentoDao.delete(atendimento);
     	redirectAttributes.addFlashAttribute("status", "success");
-        redirectAttributes.addFlashAttribute("menssagem", "Especialiade excluida com sucesso!");
+        redirectAttributes.addFlashAttribute("menssagem", "Atendimento excluido com sucesso!");
         return new ModelAndView("redirect:/atendimento");
     } 
     

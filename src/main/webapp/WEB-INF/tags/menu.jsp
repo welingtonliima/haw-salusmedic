@@ -8,26 +8,26 @@
 				<ul class="nav child_menu">
 					<li><a href="diagnostico">Diagnóstico</a></li>
 					<li><a href="bam">BAM</a></li>
-					<li><a href="admissaoInternacao">Admissão
-							Médica(Internação)</a></li>
+					<li><a href="admissaoInternacao">Admissão Médica(Internação)</a></li>
 					<li><a href="alergia">Alergia</a></li>
 					<li><a href="resumoAcolhimento">Resumo Acolhemiento</a></li>
-				</ul></li>
+				</ul>
+			</li>
 			<li><a><i class="fa fa-h-square"></i> Evolução Médica <span
 					class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="#">Evolução Clinica</a></li>
 					<li><a href="#">Evolução Multidisciplinar</a></li>
-				</ul></li>
-			<li><a><i class="fa fa-plus-square-o"></i> Parecer <span
-					class="fa fa-chevron-down"></span></a>
+				</ul>
+			</li>
+			<li><a><i class="fa fa-plus-square-o"></i> Parecer <span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
 					<li><a href="#">Solicitação de Parecer</a></li>
 					<li><a href="#">Resposta de Parecer</a></li>
-				</ul></li>
+				</ul>
+			</li>
 			<li><a href="#"><i class="fa fa-medkit"></i> Prescrição</a></li>
-			<li><a href="#"><i class="fa fa-archive"></i> História
-					Clínica</a></li>
+			<li><a href="#"><i class="fa fa-archive"></i> História Clínica</a></li>
 			<li><a><i class="fa fa-plus-square"></i> Resultado de Exames
 					<span class="fa fa-chevron-down"></span></a>
 				<ul class="nav child_menu">
@@ -68,9 +68,10 @@
 						<ul class="nav child_menu">
 							<li><a href="#">Declaração de Comparecimento</a></li>
 							<li><a href="#level2_1">Declaração de Acompanhamento</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul></li>
-			<li><a href="#"><i class="fa fa-ambulance"></i> Alta</a></li>
+				<li><a href="#"><i class="fa fa-ambulance"></i> Alta</a></li>
 		</ul>
 	</div>
 </div>

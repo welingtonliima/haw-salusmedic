@@ -57,6 +57,7 @@ public class PacienteController {
 			return form(paciente);
 		}
 		if (paciente.getId() == null || paciente.getId() == 0) {
+			paciente.setStatus(true);
 			paciente.setUsuario(pacienteService.getUsuarioService().criarPaciente(paciente.getCpf(), paciente.getUsuario().getPerfis()));
 			paciente.setProntuario(pacienteService.getProntuarioService().criarProntuario());
 		}

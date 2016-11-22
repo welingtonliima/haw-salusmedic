@@ -24,7 +24,7 @@ public class ProntuarioController {
 	@RequestMapping(value = "/{id}", name = "prontuarioEletronico")
 	public ModelAndView detalhe(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("prontuario/detalhe");
-		modelAndView.addObject("prontuario", prontuarioService.getProntuariorDao().findOne(id));
+		modelAndView.addObject("atendimento", prontuarioService.getAtendimentoService().getAtendimentoDao().findOne(id));
 		return modelAndView;
 	}
 

@@ -8,6 +8,7 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.haw.salusmedic.dao.AtendimentoDao;
 import br.com.haw.salusmedic.dao.EspecialidadeDao;
 import br.com.haw.salusmedic.dao.HospitalDao;
 import br.com.haw.salusmedic.dao.PacienteDao;
@@ -24,12 +25,61 @@ import br.com.haw.salusmedic.model.TipoPrestador;
 @Service
 public class AtendimentoService {
 	
+	@Autowired private AtendimentoDao atendimentoDao;
 	@Autowired private PrestadorDao prestadorDao;
 	@Autowired private TipoPrestadorDao tipoPrestadorDao;
 	@Autowired private HospitalDao hospitalDao;
 	@Autowired private TipoAtendimentoDao tipoAtendimentoDao;
 	@Autowired private EspecialidadeDao especialidaDao;
 	@Autowired private PacienteDao pacienteDao;
+
+	public AtendimentoDao getAtendimentoDao() {
+		return atendimentoDao;
+	}
+
+	public void setAtendimentoDao(AtendimentoDao atendimentoDao) {
+		this.atendimentoDao = atendimentoDao;
+	}
+
+	public PrestadorDao getPrestadorDao() {
+		return prestadorDao;
+	}
+
+	public void setPrestadorDao(PrestadorDao prestadorDao) {
+		this.prestadorDao = prestadorDao;
+	}
+
+	public TipoPrestadorDao getTipoPrestadorDao() {
+		return tipoPrestadorDao;
+	}
+
+	public void setTipoPrestadorDao(TipoPrestadorDao tipoPrestadorDao) {
+		this.tipoPrestadorDao = tipoPrestadorDao;
+	}
+
+	public HospitalDao getHospitalDao() {
+		return hospitalDao;
+	}
+
+	public void setHospitalDao(HospitalDao hospitalDao) {
+		this.hospitalDao = hospitalDao;
+	}
+
+	public EspecialidadeDao getEspecialidaDao() {
+		return especialidaDao;
+	}
+
+	public void setEspecialidaDao(EspecialidadeDao especialidaDao) {
+		this.especialidaDao = especialidaDao;
+	}
+
+	public PacienteDao getPacienteDao() {
+		return pacienteDao;
+	}
+
+	public void setPacienteDao(PacienteDao pacienteDao) {
+		this.pacienteDao = pacienteDao;
+	}
 
 	public Paciente getPaciente(Long idPaciente){
 		return pacienteDao.findOne(idPaciente);

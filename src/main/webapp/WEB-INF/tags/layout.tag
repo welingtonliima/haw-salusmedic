@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<br />
-					<%@include file="menuAdministrador.jsp"%>
+					<%@include file="menu.jsp"%>
 				</div>
 			</div>
 			<%@include file="topo.jsp"%>

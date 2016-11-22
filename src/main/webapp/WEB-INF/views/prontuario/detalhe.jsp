@@ -1,21 +1,21 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
-<t:layoutDashboard module="Prontuário Eletrônico do Paciente">
-
+<t:layout module="Prontuário Eletrônico do Paciente">
+<div class="row">
 	<t:painel title="Dados Gerais" md="12" sm="12" xs="12" fechar="fechar">
 		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="50%">
 			<tbody>
 				<tr>
-					<td><b>Paciente:</b> 1304658</td>
-					<td><b>Nome Completo:</b> José Campos Ferreira</td>
-					<td><b>Idade:</b> (39a 9m 9d) 27/12/1972</td>
-					<td><b>Sexo:</b> Masculino</td>
+					<td><b>Paciente:</b> ${atendimento.paciente.id}</td>
+					<td><b>Nome Completo:</b> ${atendimento.paciente.nome}</td>
+					<td><b>Idade:</b> ${atendimento.paciente.idade} anos</td>
+					<td><b>Sexo:</b> ${atendimento.paciente.sexo}</td>
 				</tr>
 				<tr>
-					<td><b>Atendimento:</b> 1202659</td>
-					<td><b>Médico:</b> Vinicius Celeste Lorca</td>
-					<td><b>Especialidade:</b> Cirurgia Geral</td>
-					<td><b>Local:</b> Pronto Socorro (Hospital Regional do Gama)</td>
+					<td><b>Atendimento:</b> ${atendimento.id}</td>
+					<td><b>Médico:</b> ${atendimento.prestador.nome}</td>
+					<td><b>Especialidade:</b> ${atendimento.especialidade.descricao}</td>
+					<td><b>Local:</b> ${atendimento.destino} (${atendimento.hospital.sigla}-${atendimento.hospital.endereco.uf})</td>
 				</tr>
 				<tr>
 					<td colspan="2"><b>Hipótese Diagnóstica:</b> Z48.9 –
@@ -26,6 +26,8 @@
 			</tbody>
 		</table>
 	</t:painel>
+	</div>
+	<div class="row">
 	<t:painel title="História Clinica" md="6" sm="6" xs="6" fechar="fechar">
 		<table id="datatable-responsive"class="table table-striped table-bordered dt-responsive nowrap"
 			cellspacing="0" width="100%">
@@ -37,21 +39,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Diabetes</td>
-					<td>Sim</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Fumante</td>
-					<td>Sim</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Pressão Alta</td>
-					<td>Sim</td>
-				</tr>
 			</tbody>
 		</table>
 		<div class="col-md-offset-8">
@@ -64,9 +51,7 @@
 		</div>
 	</t:painel>
 	<t:painel title="Doenças Crônicas" md="6" sm="6" xs="6" fechar="fechar">
-		<table id="datatable-responsive"
-			class="table table-striped table-bordered dt-responsive nowrap"
-			cellspacing="0" width="100%">
+		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -77,23 +62,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>E06 – Tireoidite</td>
-					<td>2 anos e 3 meses</td>
-				</tr>
 			</tbody>
 		</table>
 		<div class="col-md-offset-10">
-			<button type="submit" class="btn btn-primary btn-sm">
-				<i class="fa fa-file"></i> Adicionar
-			</button>
+			<button type="submit" class="btn btn-primary btn-sm"> <i class="fa fa-file"></i> Adicionar </button>
 		</div>
 	</t:painel>
+		</div>
+	<div class="row">
 	<t:painel title="Medicamento em Uso" md="6" sm="6" xs="6" fechar="fechar">
-		<table id="datatable-responsive"
-			class="table table-striped table-bordered dt-responsive nowrap"
-			cellspacing="0" width="100%">
+		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -102,23 +80,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Ibuprofeno</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Omeprazol</td>
-					<td></td>
-				</tr>
 			</tbody>
 		</table>
 	</t:painel>
 	<t:painel title="Alergias" md="6" sm="6" xs="6" fechar="fechar">
-		<table id="datatable-responsive"
-			class="table table-striped table-bordered dt-responsive nowrap"
-			cellspacing="0" width="100%">
+		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -135,9 +101,10 @@
 			</tbody>
 		</table>
 	</t:painel>
-		<t:painel title="Vacina" md="6" sm="6" xs="6" fechar="fechar">
-		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap"
-			cellspacing="0" width="100%">
+		</div>
+	<div class="row">
+		<t:painel title="Vacinas" md="6" sm="6" xs="6" fechar="fechar">
+		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>#</th>
@@ -146,16 +113,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Ibuprofeno</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Omeprazol</td>
-					<td></td>
-				</tr>
 			</tbody>
 		</table>
 	</t:painel>
@@ -171,18 +128,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Nega Alergia</td>
-					<td>Medicamento</td>
-				</tr>
 			</tbody>
 		</table>
 	</t:painel>
+		</div>
+	<div class="row">
 	<t:painel title="Últimas Consultas" md="12" sm="12" xs="12" fechar="fechar">
-		<table id="datatable-responsive"
-			class="table table-striped table-bordered dt-responsive nowrap"
-			cellspacing="0" width="100%">
+		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>Data/Hora</th>
@@ -193,20 +145,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>23/09/2016 17:24</td>
-					<td>E06 - Tireoidite</td>
-					<td>Herminio José Lima Moura</td>
-					<td>Clinica Geral</td>
-					<td><a style="font-size: 14px"><i
-							class="fa fa-folder-open"></i></td>
-				</tr>
 			</tbody>
 		</table>
 		<div class="col-md-offset-10">
-			<button type="submit" class="btn btn-sucess btn-sm">
-				<i class="fa fa-search"></i> Visualizar Todos
-			</button>
+			<button type="submit" class="btn btn-sucess btn-sm"> <i class="fa fa-search"></i> Visualizar Todos </button>
 		</div>
 	</t:painel>
-</t:layoutDashboard>
+</t:layout>
