@@ -57,10 +57,8 @@ public class PacienteController {
 			return form(paciente);
 		}
 		if (paciente.getId() == null || paciente.getId() == 0) {
-			Usuario novoUsuario;
-			novoUsuario = pacienteService.getUsuarioService().criarPrestador(paciente.getCpf(), paciente.getUsuario().getPerfis());
-			paciente.setUsuario(novoUsuario);
-			System.out.println("Login.: "+novoUsuario.getLogin()+ " Senha.: "+novoUsuario.getSenha()+" Perfis.:"+novoUsuario.getPerfis());
+			paciente.setUsuario(pacienteService.getUsuarioService().criarPaciente(paciente.getCpf(), paciente.getUsuario().getPerfis()));
+			paciente.setProntuario(pacienteService.getProntuarioService().criarProntuario());
 		}
     	pacienteDao.save(paciente);
         redirectAttributes.addFlashAttribute("status", "success");

@@ -98,9 +98,6 @@
 					<a href="historicoPaciente"><b><i class="fa fa-archive"></i>&nbsp; Histórico de Pacientes</b></a>
 				</li>
 				<li>
-					<a href="${s:mvcUrl('formTriagem').build()}"><i class="fa fa-bars"></i> Triagem</a>
-				</li>
-				<li>
 					<a href="listarParecer"><b><i class="fa fa-plus-square"></i>&nbsp; Parecer</b></a>
 				</li>
 				<li>

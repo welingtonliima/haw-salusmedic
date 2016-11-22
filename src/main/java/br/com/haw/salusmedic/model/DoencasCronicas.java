@@ -15,6 +15,7 @@ public class DoencasCronicas {
 	@ManyToOne
 	private Diagnostico diagnostico;
 	private String tempoDaDoença;
+	private String observacao;
 	
 	public Long getId() {
 		return id;
@@ -34,4 +35,11 @@ public class DoencasCronicas {
 	public void setTempoDaDoença(String tempoDaDoença) {
 		this.tempoDaDoença = tempoDaDoença;
 	}
+	public String getObservacao() {
+		return observacao;
+	}
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+	
 }

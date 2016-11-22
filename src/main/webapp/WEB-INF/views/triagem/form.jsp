@@ -9,29 +9,29 @@
 		method="post" commandName="triagem"
 		class="form-horizontal form-label-left">
 		<div class="row">
-			<t:painel title="Abordagem Inicial" md="6">
+			<t:painel title="Abordagem Inicial" md="6" fechar="fechar">
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Queixa Principal <span class="required">*</span></label>
-						<form:textarea path="abordagemInicial.queixaInicial" id="queixa"
+						<form:textarea path="" id="queixa"
 							class="form-control" required="required" rows="2" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Observação </label>
-						<form:textarea path="abordagemInicial.observacao" id="observacao"
+						<form:textarea path="" id="observacao"
 							class="form-control" rows="2" />
 					</div>
 
 				</div>
 			</t:painel>
 	
-			<t:painel title="Alergias" md="6" >
+			<t:painel title="Alergias" md="6" fechar="fechar">
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Substância <span class="required">*</span></label>
-						<form:select path="alergias.substancia" id="substancia"
+						<form:select path="" id="substancia"
 							class="form-control" required="required">
 							<form:option value=""></form:option>
 							<form:option value="ANTRAQUINONA">ANTRAQUINONA</form:option>
@@ -44,7 +44,7 @@
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Observação <span class="required">*</span></label>
-						<form:textarea path="alergias.observacaoAlergia"
+						<form:textarea path=""
 							id="observacaoAlergia" class="form-control" required="required"
 							rows="3" />
 					</div>
@@ -53,48 +53,48 @@
 			</t:painel>
 		</div>
 		<div class="row">
-			<t:painel title="Sinais Vitais" md="6">
+			<t:painel title="Sinais Vitais" md="6" fechar="fechar"> 
 				<div class="row">
 					<div class="form-group col-md-6">
 						<label for="">Frequência Cardíaca(BPM)</label>
-						<form:input path="sinaisVitais.frequenciaCardiaca" id="frequenciaCardiaca" class="form-control" />							
+						<form:input path="" id="frequenciaCardiaca" class="form-control" />							
 					</div>
 					<div class="form-group col-md-6">
 						<label for="">Frequência Respiratória(IRPM)</label>
-						<form:input path="sinaisVitais.frequenciaRespiratoria" id="frequenciaRespiratoria" class="form-control"/>							
+						<form:input path="" id="frequenciaRespiratoria" class="form-control"/>							
 
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-md-6">
 						<label for="">Glicemia</label>
-						<form:input path="sinaisVitais.glicemia" id="glicemia" class="form-control"/>							
+						<form:input path="" id="glicemia" class="form-control"/>							
 					</div>
 					<div class="form-group col-md-6">
 						<label for="">Peso(Kg)</label>
-						<form:input path="sinaisVitais.peso" id="peso" class="form-control"/>							
+						<form:input path="" id="peso" class="form-control"/>							
 
 					</div>
 				</div>
 								<div class="row">
 					<div class="form-group col-md-6">
 						<label for="">Pressão Arterial Sistólica</label>
-						<form:input path="sinaisVitais.pressaoArterialSistolica" id="pressaoArterialSistolica" class="form-control"/>							
+						<form:input path="" id="pressaoArterialSistolica" class="form-control"/>							
 					</div>
 					<div class="form-group col-md-6">
 						<label for="">Pressão Arterial Diastólica</label>
-						<form:input path="sinaisVitais.pressaoArterialDiastolica" id="pressaoArterialDiastolica" class="form-control"/>							
+						<form:input path="" id="pressaoArterialDiastolica" class="form-control"/>							
 
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-md-6">
 						<label for="">Saturação Periférica O2(%) </label>
-						<form:input path="sinaisVitais.saturacaoPerifericaO2" id="saturacaoPerifericaO2" class="form-control"/>							
+						<form:input path="" id="saturacaoPerifericaO2" class="form-control"/>							
 					</div>
 					<div class="form-group col-md-6">
 						<label for="">Temperatura(ºC) </label>
-						<form:input path="sinaisVitais.temperatura" id="temperatura" class="form-control"/>							
+						<form:input path="" id="temperatura" class="form-control"/>							
 
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Escala de dor  <span class="required">*</span></label>
-						<form:select path="avaliacaoInicial.escalaDeDor" id="escalaDeDor"
+						<form:select path="" id="escalaDeDor"
 							class="form-control" >
 							<form:option value=""></form:option>
 							<form:option value="SEM DOR">0 (Sem dor)</form:option>
@@ -119,7 +119,7 @@
 				<div class="row">
 					<div class="form-group col-md-12">
 						<label for="">Classificação de Risco<span class="required">*</span></label>
-						<form:select path="avaliacaoInicial.avaliacaoDeRisco" id="avaliacaoDeRisco"
+						<form:select path="" id="avaliacaoDeRisco"
 							class="form-control" >
 							<form:option value=""></form:option>
 							<form:option value="EMERGENCIA">Emergência</form:option>

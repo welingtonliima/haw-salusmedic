@@ -22,8 +22,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 public class Usuario implements UserDetails{
 
-
 	private static final long serialVersionUID = 1L;
+	
 	@Id @Column(name="idUsuario") @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(unique=true)
@@ -31,12 +31,11 @@ public class Usuario implements UserDetails{
 	private String senha;
 	@DateTimeFormat @Temporal(TemporalType.DATE)
 	private Calendar dataCadastro;
-	private boolean alterouAsenha;
-	
-	
-    @ManyToMany(fetch=FetchType.EAGER)
+	private boolean alterouAsenha;	
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Perfil> perfis = new ArrayList<Perfil>();
-	
+
+
 	public Long getId() {
 		return id;
 	}

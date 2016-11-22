@@ -17,14 +17,16 @@
 
 <c:url value="/resources" var="resourcesPath" />
 <c:url value="/resources/gentelella-master" var="stylePath" />
-<link rel="shortcut icon" href="${resourcesPath }/imagens/Icone.ico">
+<link rel="shortcut icon" href="${resourcesPath }/imagens/Icone.ico"/>
 
 <title>${module} | Salus Medic</title>
-<script> window.onload = function(){ document.getElementById("fechar").click();};</script>
+<script> window.onload = function(){ document.getElementById("Dados Gerais").click();};</script>
 
-<link href="${stylePath}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="${stylePath}/vendors/font-awesome/css/font-awesome.min.css"	rel="stylesheet">
-<link href="${stylePath}/vendors/nprogress/nprogress.css" rel="stylesheet">
+
+
+<link href="${stylePath}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="${stylePath}/vendors/font-awesome/css/font-awesome.min.css"	rel="stylesheet"/>
+<link href="${stylePath}/vendors/nprogress/nprogress.css" rel="stylesheet"/>
 <link href="${stylePath}/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
 
 <!-- Pnotify -->

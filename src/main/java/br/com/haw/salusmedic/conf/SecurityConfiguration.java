@@ -32,7 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.addFilterBefore(encodingFilter, CsrfFilter.class);
         http.authorizeRequests()
     		.antMatchers("/resources/**").permitAll()
-        	//.anyRequest().authenticated()
+        	.anyRequest().authenticated()
         	.antMatchers("/").permitAll()
         	.and().formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/dashboard")
         	.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));

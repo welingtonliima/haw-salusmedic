@@ -16,7 +16,7 @@
 				<div class="row">
 					<div class="form-group col-md-2">
 						<label for="">Código</label>
-						<input type="text" name="" id="" class="form-control" disabled="disabled" value="">
+						<input type="text" name="" id="" class="form-control" disabled="disabled" value="${id}">
 					</div>
 					<div class="form-group col-md-5">
 						<label for="">Paciente</label>                                                   
@@ -90,7 +90,7 @@
 					</div>
 					<div class="form-group col-md-2">
 						<label for="">Status</label>
-						<input type="text" class="form-control" readonly="readonly" value="CADASTRANDO"/>	                                         
+						<input name="status" type="text" class="form-control" readonly="readonly" value="${status}"/>	                                         
 					</div>
 				</div>
 				<div class="row">
@@ -126,7 +126,7 @@
 			</form:form>
 		</t:painel>
 	</div>
-	<c:if test="${paciente.id eq '' || paciente.id eq null}">
+	<c:if test="${paciente.id eq '' || paciente.id eq null || atendimento.id eq null || atendimento.id eq ''}">
 		<jsp:include page="../paciente/modalBuscaPaciente.jsp"/>
 	</c:if>
 </t:layoutDashboard>

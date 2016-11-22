@@ -1,16 +1,10 @@
 package br.com.haw.salusmedic.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Embeddable;
 
-@Entity
+@Embeddable
 public class HistoriaClinica {
 	
-	@Id @Column(name = "idHistoriaClinica") @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	private boolean avc;
 	private boolean asma;
 	private boolean cancer;
@@ -25,12 +19,6 @@ public class HistoriaClinica {
 	private boolean usuarioDeDrogas;
 	private boolean tabagismo;
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public boolean isAvc() {
 		return avc;
 	}

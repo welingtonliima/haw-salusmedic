@@ -185,6 +185,7 @@
 						</form:select>
 					</div>
 				</div>
+				
 	    		<div class="ln_solid"></div>
 	    		<c:if test="${id != null}">
                     <div class="form-group">
@@ -201,8 +202,9 @@
                 <c:if test="${id == null}">
                     <div class="form-group">
                         <div class="col-md-4 col-sm-4 col-xs-8 col-md-offset-4">
+                           <input type="hidden" name="tipoSanguineo" value="">
                            <button type="button" value="voltar" class="btn btn-primary" onclick="voltarAnterior();"">Voltar</button>
-                            <button type="submit" class="btn btn-success">Cadastrar</button>
+                            <button type="submit" class="btn btn-success">Cadastrar</button>                            
                         </div>
                     </div>
                 </c:if>

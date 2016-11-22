@@ -94,9 +94,11 @@ public class AtendimentoController {
     
     @RequestMapping(value = "/{tipoAtendimento}", name="listarTipoAtendimento")
     public ModelAndView listarTipoAtendimento(@PathVariable("tipoAtendimento") String tipoAtendimento) {
-        ModelAndView modelAndView = new ModelAndView("listaPacientes/listarTipoAtendimento");
+        ModelAndView modelAndView = new ModelAndView("atendimento/listarTipoAtendimento");
+        TipoAtendimento tAtendimento = atendimentoService.getTipoAtendimentoDao().findByDescricao(tipoAtendimento);
         List<Atendimento> atendimentos = atendimentoDao.findByTipoAtendimento(atendimentoService.getTipoAtendimentoDao().findByDescricao(tipoAtendimento));
         modelAndView.addObject("atendimentos", atendimentos);
+        modelAndView.addObject("tAtendimento", tAtendimento);
         modelAndView.addObject("tipoAtendimento", tipoAtendimento);
         return modelAndView;
     }

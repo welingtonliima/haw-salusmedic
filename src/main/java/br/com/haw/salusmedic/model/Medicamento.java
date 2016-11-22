@@ -14,7 +14,7 @@ public class Medicamento {
 	@ManyToOne
 	private TipoMedicamento tipoMedicamento;
 	private double quantidade;
-	private String amp;
+	private String unidade;
 	private String formaDeAplicacacao;
 	private String frequencia;
 	private String observacao;
@@ -37,11 +37,11 @@ public class Medicamento {
 	public void setQuantidade(double quantidade) {
 		this.quantidade = quantidade;
 	}
-	public String getAmp() {
-		return amp;
+	public String getUnidade() {
+		return unidade;
 	}
-	public void setAmp(String amp) {
-		this.amp = amp;
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
 	}
 	public String getFormaDeAplicacacao() {
 		return formaDeAplicacacao;

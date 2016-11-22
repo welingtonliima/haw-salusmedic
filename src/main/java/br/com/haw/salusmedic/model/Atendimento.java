@@ -27,6 +27,7 @@ public class Atendimento {
 	@DateTimeFormat @Temporal(value=TemporalType.TIMESTAMP) private Calendar dataAndHoraSaida;
 	@ManyToOne private Diagnostico diagnostico;
 	
+	private String prioridade;
 	private String localProcedencia;
 	private String destino;
 	private String status;
@@ -42,6 +43,12 @@ public class Atendimento {
 	}
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
+	}
+	public String getPrioridade() {
+		return prioridade;
+	}
+	public void setPrioridade(String prioridade) {
+		this.prioridade = prioridade;
 	}
 	public Prestador getPrestador() {
 		return prestador;

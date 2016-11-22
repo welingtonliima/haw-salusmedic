@@ -14,4 +14,6 @@ public interface PacienteDao extends JpaRepository<Paciente, Long>{
 
 	List<Paciente> findAllByOrderByNomeAsc();
 
+	Paciente findByCpf(String cpfPaciente);
+	
 }
