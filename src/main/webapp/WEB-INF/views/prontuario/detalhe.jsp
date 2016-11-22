@@ -103,6 +103,10 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="col-md-offset-8">
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalAlergias"> <i class="fa fa-file"></i> Adicionar </button>
+			<jsp:include page="modalAlergias.jsp" />
+		</div>
 	</t:painel>
 		</div>
 	<div class="row">
