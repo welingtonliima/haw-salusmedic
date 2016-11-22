@@ -81,6 +81,10 @@
 			<tbody>
 			</tbody>
 		</table>
+		<div class="col-md-offset-8">
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalMedicamentoEmUso"> <i class="fa fa-file"></i> Adicionar </button>
+			<jsp:include page="modalMedicamentoEmUso.jsp" />
+		</div>
 	</t:painel>
 	<t:painel title="Alergias" md="6" sm="6" xs="6" fechar="fechar">
 		<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
