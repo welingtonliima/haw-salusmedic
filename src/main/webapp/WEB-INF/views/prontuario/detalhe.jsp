@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <t:layout module="Prontuário Eletrônico do Paciente">
 <div class="row">
 	<t:painel title="Dados Gerais" md="12" sm="12" xs="12" fechar="fechar">
@@ -39,16 +40,12 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 			</tbody>
 		</table>
 		<div class="col-md-offset-8">
-			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-				<i class="fa fa-file"></i> Modal
-			</button>
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fa fa-file"></i> Adicionar </button>
 			<jsp:include page="modalHistoriaClinica.jsp" />
-			<button type="submit" class="btn btn-primary btn-sm">
-				<i class="fa fa-file"></i> Adicionar
-			</button>
 		</div>
 	</t:painel>
 	<t:painel title="Doenças Crônicas" md="6" sm="6" xs="6" fechar="fechar">

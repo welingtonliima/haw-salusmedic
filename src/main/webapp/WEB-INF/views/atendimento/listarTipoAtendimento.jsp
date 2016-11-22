@@ -3,13 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
-
 
 
 <t:layoutDashboard module="Atendimento">
- 	<security:authentication property="principal" var="usuario"/>
- 	Usuário: ${usuario.username}
 	<c:if test="${tipoAtendimento eq 'INTERNACAO' }">
 		<t:painel title="Internação">
 			<input type="hidden" id="statusNotificacao" value="${status}">
@@ -82,7 +78,7 @@
 					<tr>
 						<td style="5%">${atendimento.prioridade}</td>
 						<td>${atendimento.id}</td>
-						<td><a href="${s:mvcUrl('prontuarioEletronico').arg(0,atendimento.id)}">${atendimento.paciente.nome}</a></td>
+						<td><a href="${s:mvcUrl('prontuarioEletronico').arg(0,atendimento.id).build()}">${atendimento.paciente.nome}</a></td>
 						<td>${atendimento.paciente.idade} ANOS</td>
 						<td>${atendimento.paciente.sexo}</td>
 						<td>${atendimento.status}</td>
