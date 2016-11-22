@@ -115,5 +115,13 @@ public class Atendimento {
 	}
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+	@Override
+	public String toString() {
+		return "Atendimento [id=" + id + ", paciente=" + paciente + ", prestador=" + prestador + ", hospital="
+				+ hospital + ", tipoAtendimento=" + tipoAtendimento + ", especialidade=" + especialidade
+				+ ", dataAndHoraEntrada=" + dataAndHoraEntrada + ", dataAndHoraSaida=" + dataAndHoraSaida
+				+ ", diagnostico=" + diagnostico + ", prioridade=" + prioridade + ", localProcedencia="
+				+ localProcedencia + ", destino=" + destino + ", status=" + status + ", observacao=" + observacao + "]";
 	} 
 }
