@@ -24,12 +24,6 @@ public class ProntuarioController {
 
 	@Autowired
 	private ProntuarioService prontuarioService;
-	@Autowired private PacientePropertyEditor pacientePropertyEditor;
-
-	@InitBinder
-	public void initBinder(WebDataBinder webDataBinder) {
-		webDataBinder.registerCustomEditor(Paciente.class, pacientePropertyEditor);
-	}
 
 	@RequestMapping(value = "form", name = "formProntuario")
 	public ModelAndView form() {
@@ -47,10 +41,10 @@ public class ProntuarioController {
     @RequestMapping(value = "/alterarHistoriaClinicaPaciente", name="alterarHistoriaClinica")
     public ModelAndView alterarHistoriaClinicaPaciente(Atendimento atendimento) {
         System.out.println("Chegou Aqui");
-        System.out.println(atendimento.getPaciente());
-        System.out.println(atendimento.getPaciente().getProntuario());
-        System.out.println(atendimento.getPaciente().getProntuario().getHistoriaClinica());
-    	prontuarioService.getProntuariorDao().save(atendimento.getPaciente().getProntuario());
+        System.out.println(atendimento.getPaciente().getId());
+        System.out.println(atendimento.getPaciente().getProntuario().getId());
+        System.out.println(atendimento.getPaciente().getProntuario().getHistoriaClinica().isAsma());
+    	//prontuarioService.getProntuariorDao().save(atendimento.getPaciente().getProntuario());
         //return detalhe(atendimento.getId());
         return detalhe(3L);
     }
