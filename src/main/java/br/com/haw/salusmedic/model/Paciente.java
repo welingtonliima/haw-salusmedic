@@ -23,7 +23,7 @@ public class Paciente extends Pessoa {
 	@Embedded
 	private CertidaoNascimento certidaoNascimento;
 	private boolean status;
-	@OneToOne (cascade = CascadeType.PERSIST)
+	@OneToOne (cascade = CascadeType.ALL)
 	private Prontuario prontuario;
 
 	public String getNomeDaMae() {

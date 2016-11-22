@@ -8,6 +8,7 @@
 			<tbody>
 				<tr>
 					<td><b>Paciente:</b> ${atendimento.paciente.id}</td>
+					<td><b>Paciente:</b> ${atendimento.paciente.prontuario}</td>
 					<td><b>Nome Completo:</b> ${atendimento.paciente.nome}</td>
 					<td><b>Idade:</b> ${atendimento.paciente.idade} anos</td>
 					<td><b>Sexo:</b> ${atendimento.paciente.sexo}</td>
@@ -19,10 +20,8 @@
 					<td><b>Local:</b> ${atendimento.destino} (${atendimento.hospital.sigla}-${atendimento.hospital.endereco.uf})</td>
 				</tr>
 				<tr>
-					<td colspan="2"><b>Hipótese Diagnóstica:</b> Z48.9 –
-						Seguimento cirúrgico não especificado</td>
-					<td colspan="2"><b>Pré Queixa:</b> Paciente retorna para
-						renovação de varios curativos espalhados pelo corpo.</td>
+					<td colspan="2"><b>Hipótese Diagnóstica:</b> Z48.9 – Seguimento cirúrgico não especificado</td>
+					<td colspan="2"><b>Pré Queixa:</b> Paciente retorna para renovação de varios curativos espalhados pelo corpo.</td>
 				</tr>
 			</tbody>
 		</table>
