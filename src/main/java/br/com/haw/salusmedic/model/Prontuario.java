@@ -19,7 +19,7 @@ public class Prontuario {
     private boolean doadorOrgaos;
     
     @Embedded
-    private HistoriaClinica historicaClinica;
+    private HistoriaClinica historiaClinica;
     @OneToMany
     private List<DoencasCronicas> doencasCronicas;
     @OneToMany
@@ -51,11 +51,11 @@ public class Prontuario {
 	public void setDoadorOrgaos(boolean doadorOrgaos) {
 		this.doadorOrgaos = doadorOrgaos;
 	}
-	public HistoriaClinica getHistoricaClinica() {
-		return historicaClinica;
+	public HistoriaClinica getHistoriaClinica() {
+		return historiaClinica;
 	}
-	public void setHistoricaClinica(HistoriaClinica historicaClinica) {
-		this.historicaClinica = historicaClinica;
+	public void setHistoriaClinica(HistoriaClinica historiaClinica) {
+		this.historiaClinica = historiaClinica;
 	}
 	public List<DoencasCronicas> getDoencasCronicas() {
 		return doencasCronicas;
