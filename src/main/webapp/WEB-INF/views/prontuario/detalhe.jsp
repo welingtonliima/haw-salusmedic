@@ -42,9 +42,10 @@
 			</tbody>
 		</table>
 		<div class="col-md-offset-8">
-			<button type="submit" class="btn btn-primary btn-sm">
-				<i class="fa fa-file"></i> Adicionar
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+				<i class="fa fa-file"></i> Modal
 			</button>
+			<jsp:include page="modalHistoriaClinica.jsp" />
 			<button type="submit" class="btn btn-primary btn-sm">
 				<i class="fa fa-file"></i> Adicionar
 			</button>
