@@ -121,7 +121,12 @@
 			</thead>
 			<tbody>
 			</tbody>
+			
 		</table>
+		<div class="col-md-offset-8">
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalVacina"> <i class="fa fa-file"></i> Adicionar </button>
+			<jsp:include page="modalVacina.jsp" />
+		</div>
 	</t:painel>
 	<t:painel title="Exames Realizados" md="6" sm="6" xs="6" fechar="fechar">
 		<table id="datatable-responsive"

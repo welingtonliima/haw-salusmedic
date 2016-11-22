@@ -16,7 +16,14 @@ public class Vacina {
 	private TipoVacina tipoVacina;
 	private String nomeResponsavel;
 	private String localAplicacao;
+	private String observacao;
 	
+	public String getObservacao() {
+		return observacao;
+	}
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
 	public Long getId() {
 		return id;
 	}
