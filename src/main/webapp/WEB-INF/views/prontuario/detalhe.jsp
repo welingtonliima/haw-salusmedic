@@ -44,7 +44,7 @@
 			</tbody>
 		</table>
 		<div class="col-md-offset-8">
-			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"> <i class="fa fa-file"></i> Adicionar </button>
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalHistoriaClinica"> <i class="fa fa-file"></i> Adicionar </button>
 			<jsp:include page="modalHistoriaClinica.jsp" />
 		</div>
 	</t:painel>
@@ -63,7 +63,8 @@
 			</tbody>
 		</table>
 		<div class="col-md-offset-10">
-			<button type="submit" class="btn btn-primary btn-sm"> <i class="fa fa-file"></i> Adicionar </button>
+			<button type="submit" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalDoencasCronicas"> <i class="fa fa-file"></i> Adicionar </button>
+			<jsp:include page="modalDoencasCronicas.jsp" />		
 		</div>
 	</t:painel>
 		</div>
